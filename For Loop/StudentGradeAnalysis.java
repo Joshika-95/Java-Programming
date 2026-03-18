@@ -7,15 +7,14 @@ public class StudentGradeAnalysis {
         int highestScore=0;
         int passCount=0;
         int failCount=0;
-        for (int i=0;i<=n;i++){
+        for (int i=0;i<n;i++){
             String name=p2.next();
             int score=p2.nextInt();
             totalScore+=score;
             if(score>highestScore){
                 highestScore=score;
             }
-            char grade='F';
-            String status=""; 
+            char grade;
             if(score>=85 && score<=100){
                 grade='A';
             }
@@ -28,7 +27,11 @@ public class StudentGradeAnalysis {
             else if(score>=50 && score<=59){
                 grade='D';
             }
-            else if(score>=60){
+            else{
+                grade='F';
+            }
+            String status=""; 
+            if(score>=60){
                 status="Pass";
                 passCount++;
             }
@@ -40,9 +43,7 @@ public class StudentGradeAnalysis {
             System.out.println("Score: "+score);
             System.out.println("Letter Grade: "+grade);
             System.out.println("Status: "+status);
-            if(i!=n-1){
-                System.out.println();
-            }
+            System.out.println();
         }
         double Average=(double)totalScore/n;
         System.out.println("Total Students: "+n);
