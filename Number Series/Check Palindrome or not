@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main{
+     public static int reverse(int n){
+        int prev=0;
+        while(n>0){
+            int rem=n%10;
+            prev=prev*10+rem;
+            n/=10;
+        }
+        return prev;
+     }
+    //  public static boolean ispalli(int n){
+    //     int rev=reverse(n);
+    //     if (n==rev){
+    //         return true;
+    //     }
+    //     return false;
+    //  }
+
+     public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int ans=reverse(n);
+        // boolean ans=ispalli(n);
+        if(n==ans){
+            System.out.println("Palindrome");
+        }
+        else {
+            System.out.println("Not Palindrome");
+        }
+     }
+}
